@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>TouchPlan.io</title>
+<link rel="stylesheet" href="../style.css">
+<style type="text/css">
+#NextLink{
+	position:absolute;
+	display:none;
+	top:493px;
+	left:236px;
+	height:62px;
+	width:226px;
+}
+#WallFields{
+	position:absolute;
+	display:none;
+	top:458px;
+	left:148px;
+	height:24px;
+	width:322px;
+}
+#FinalBtns{
+	position:absolute;
+	top:491px;
+	left:127px;
+	height:66px;
+	width:659px;
+	z-index:2;
+	display:none;
+}
+</style>
+<script language="javascript">
+var WallNum=1;
+function AddWall(num) {
+	WallNum += 1;
+	switch (num) {
+		case 1:
+			document.getElementById("NextLink").style.display = "block";
+			document.getElementById("WallFields").style.display = "block";
+		break;
+		case 2:
+			if (WallNum > 3) {
+				document.getElementById("FinalBtns").style.display = "block";
+			}
+		break;
+	}
+}
+</script>
+</head>
+<body>
+<a id="NextLink" href="javascript:AddWall(2)"></a>
+<div id="WallFields"><img src="../images/GV_BuildWall_fields.png" width="322" height="24" border="0" /></div>
+<div id="FinalBtns">
+  <img src="../images/GV_BuildWall_Final.png" width="659" height="66" border="0" usemap="#FinalBtnsIMGMap" id="FinalBtnsIMG" />
+  <map name="FinalBtnsIMGMap" id="FinalBtnsIMGMap">
+    <area shape="rect" coords="2,2,227,65" href="build_gallery.html" />
+    <area shape="rect" coords="240,2,467,65" href="room_library.html" />
+  </map>
+</div>
+<img src="../images/GV_BuildWall.png" width="916" height="616" border="0" usemap="#bgIMGMap" id="bgIMG" />
+<map name="bgIMGMap" id="bgIMGMap">
+  <area shape="rect" coords="236,493,462,557" href="javascript:AddWall(1)" />
+  <area shape="rect" coords="684,63,734,94" href="gallery_index.html" />
+  <area shape="rect" coords="114,63,174,94" href="build_gallery.html" />
+</map>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>TouchPlan.io</title>
+<link rel="stylesheet" href="../style.css">
+<style type="text/css">
+#SelectChk{
+	position:absolute;
+	background-image:none;
+	top:281px;
+	left:205px;
+	width:77px;
+	height:23px;
+}
+</style>
+<script language="javascript">
+var Checked = false;
+function CheckIt() {
+	if (Checked) {
+		Checked = false;
+		document.getElementById("SelectChk").style.backgroundImage = "none";
+	} else {
+		Checked = true;
+		document.getElementById("SelectChk").style.backgroundImage = "url(../images/select_check.png)";
+	}
+}
+function EnterRoom(num) {
+	if (Checked) {
+		switch (num) {
+			case 1:
+			  window.location.href = "view_room.html";
+			break;
+			case 2:
+			  window.location.href = "edit_room.html";
+			break;
+		}
+	}
+}
+</script>
+</head>
+<body>
+<a id="SelectChk" href="javascript:CheckIt()"></a>
+<img src="../images/GV_C.png" width="916" height="616" border="0" usemap="#bgIMGMap" id="bgIMG" />
+<map name="bgIMGMap" id="bgIMGMap">
+  <area shape="rect" coords="176,153,307,277" href="javascript:CheckIt()" />
+  <area shape="rect" coords="189,497,410,560" href="javascript:EnterRoom(1)" />
+  <area shape="rect" coords="505,497,731,560" href="javascript:EnterRoom(2)" />
+  <area shape="rect" coords="684,63,734,94" href="gallery_index.html" />
+  <area shape="rect" coords="114,63,174,94" href="add_walls.html" />
+</map>
+</body>
+</html>
